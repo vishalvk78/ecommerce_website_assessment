@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "7dd6d613-671b-4e06-a059-791d3afb17f0",
+		"name": "Product_management_ADMIN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26060161",
+		"_collection_link": "https://team-kanagiri.postman.co/workspace/ecommerce-api_collection~ee51981a-bc7b-46f9-85d1-446b83a2c341/collection/26060161-7dd6d613-671b-4e06-a059-791d3afb17f0?action=share&creator=26060161&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Add_Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODQ4MTI5MTQsImlhdCI6MTY4NDcyNjUxNCwibmJmIjoxNjg0NzI2NTE0LCJzdWIiOjB9.iIUHLNIZuKe-VKILnpuj1W0VfMV9bmflr93ogR3ZiJYoXzeoWidfoPTxtUHCxRsGItWNm7kMgI2vXlprQEsNHQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Category\":\"Books\",\r\n    \"ProductName\":\"Good Habits\",\r\n    \"Description\":\"This is best book learn personal developement\",\r\n    \"Price\": 750.00,\r\n    \"Attributes\": \"Mindset\",\r\n    \"Inventory\" : 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/admin/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODQ4MTI5MTQsImlhdCI6MTY4NDcyNjUxNCwibmJmIjoxNjg0NzI2NTE0LCJzdWIiOjB9.iIUHLNIZuKe-VKILnpuj1W0VfMV9bmflr93ogR3ZiJYoXzeoWidfoPTxtUHCxRsGItWNm7kMgI2vXlprQEsNHQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Category\":\"Books\",\r\n    \"ProductName\":\"Good Habits\",\r\n    \"Description\":\"This is best book learn personal developement\",\r\n    \"Price\": 750.00,\r\n    \"Attributes\": \"Mindset\",\r\n    \"Inventory\" : 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/admin/product/27",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"product",
+						"27"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODQ4MTI5MTQsImlhdCI6MTY4NDcyNjUxNCwibmJmIjoxNjg0NzI2NTE0LCJzdWIiOjB9.iIUHLNIZuKe-VKILnpuj1W0VfMV9bmflr93ogR3ZiJYoXzeoWidfoPTxtUHCxRsGItWNm7kMgI2vXlprQEsNHQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/admin/product/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"product",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET All Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search_Product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/products/search?sort=date&order=asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"search"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "date"
+						},
+						{
+							"key": "sort",
+							"value": "price",
+							"disabled": true
+						},
+						{
+							"key": "order",
+							"value": "asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Porduct by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/product/15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						"15"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

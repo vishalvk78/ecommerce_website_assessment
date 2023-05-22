@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "f5977ab1-c438-4e75-996f-89507ec76269",
+		"name": "User Management_USERS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26060161",
+		"_collection_link": "https://team-kanagiri.postman.co/workspace/ecommerce-api_collection~ee51981a-bc7b-46f9-85d1-446b83a2c341/collection/26060161-f5977ab1-c438-4e75-996f-89507ec76269?action=share&creator=26060161&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Register_user",
+			"request": {
+				"auth": {
+					"type": "apikey"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FullName\":\"Vishal\",\r\n    \"Email\":\"user1@gmail.com\",\r\n    \"Password\":\"Vishal@123\",\r\n    \"Role\": \"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login_user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Email\":\"admin2@gmail.com\",\r\n    \"Password\":\"Vishal@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET USER by ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODQ4MTI5MTQsImlhdCI6MTY4NDcyNjUxNCwibmJmIjoxNjg0NzI2NTE0LCJzdWIiOjB9.iIUHLNIZuKe-VKILnpuj1W0VfMV9bmflr93ogR3ZiJYoXzeoWidfoPTxtUHCxRsGItWNm7kMgI2vXlprQEsNHQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/users/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODQ4MTI5MTQsImlhdCI6MTY4NDcyNjUxNCwibmJmIjoxNjg0NzI2NTE0LCJzdWIiOjB9.iIUHLNIZuKe-VKILnpuj1W0VfMV9bmflr93ogR3ZiJYoXzeoWidfoPTxtUHCxRsGItWNm7kMgI2vXlprQEsNHQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"FullName\": \"Ram\",\r\n  \"Email\": \"12345@gmail.com\",\r\n  \"Password\": \"Ram@1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/update/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"update",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODQ4MTI5MTQsImlhdCI6MTY4NDcyNjUxNCwibmJmIjoxNjg0NzI2NTE0LCJzdWIiOjB9.iIUHLNIZuKe-VKILnpuj1W0VfMV9bmflr93ogR3ZiJYoXzeoWidfoPTxtUHCxRsGItWNm7kMgI2vXlprQEsNHQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/users/delete/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"delete",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

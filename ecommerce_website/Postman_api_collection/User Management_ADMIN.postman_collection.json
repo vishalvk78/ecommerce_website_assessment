@@ -1,0 +1,301 @@
+{
+	"info": {
+		"_postman_id": "2669f987-7c45-4588-8813-dadb01d23f6d",
+		"name": "User Management_ADMIN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26060161",
+		"_collection_link": "https://team-kanagiri.postman.co/workspace/ecommerce-api_collection~ee51981a-bc7b-46f9-85d1-446b83a2c341/collection/26060161-2669f987-7c45-4588-8813-dadb01d23f6d?action=share&creator=26060161&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Register_user",
+			"request": {
+				"auth": {
+					"type": "apikey"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FullName\":\"Vishal\",\r\n    \"Email\":\"user1@gmail.com\",\r\n    \"Password\":\"Vishal@123\",\r\n    \"Role\": \"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login_user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Email\":\"vishal9080@gmail.com\",\r\n    \"Password\":\"Vishal@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SearchByDate&Price",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODM5MDY2NzgsImlhdCI6MTY4MzkwNTc3OCwibmJmIjoxNjgzOTA1Nzc4LCJzdWIiOjB9.gS519sONGfMza0qff1nkY4dy0MD47zm2TLeM23R6Xup_0b75bkbPcpg7RLcNnFvIrsaClG7fxj3AZTuSowSKyw\"",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/search?sortBy=price&sortOrder=desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"search"
+					],
+					"query": [
+						{
+							"key": "sortBy",
+							"value": "addedDate",
+							"disabled": true
+						},
+						{
+							"key": "sortBy",
+							"value": "price"
+						},
+						{
+							"key": "sortOrder",
+							"value": "desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WebTrackingCount",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODQ4MTI5MTQsImlhdCI6MTY4NDcyNjUxNCwibmJmIjoxNjg0NzI2NTE0LCJzdWIiOjB9.iIUHLNIZuKe-VKILnpuj1W0VfMV9bmflr93ogR3ZiJYoXzeoWidfoPTxtUHCxRsGItWNm7kMgI2vXlprQEsNHQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/users/admin/webtracking/count",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"admin",
+						"webtracking",
+						"count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Related_product",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODQ4MTI5MTQsImlhdCI6MTY4NDcyNjUxNCwibmJmIjoxNjg0NzI2NTE0LCJzdWIiOjB9.iIUHLNIZuKe-VKILnpuj1W0VfMV9bmflr93ogR3ZiJYoXzeoWidfoPTxtUHCxRsGItWNm7kMgI2vXlprQEsNHQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/users/admin/related_product/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"admin",
+						"related_product",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET All Users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODQ4MTI5MTQsImlhdCI6MTY4NDcyNjUxNCwibmJmIjoxNjg0NzI2NTE0LCJzdWIiOjB9.iIUHLNIZuKe-VKILnpuj1W0VfMV9bmflr93ogR3ZiJYoXzeoWidfoPTxtUHCxRsGItWNm7kMgI2vXlprQEsNHQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/users/admin/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"admin",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET USER by ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODQ4MTI5MTQsImlhdCI6MTY4NDcyNjUxNCwibmJmIjoxNjg0NzI2NTE0LCJzdWIiOjB9.iIUHLNIZuKe-VKILnpuj1W0VfMV9bmflr93ogR3ZiJYoXzeoWidfoPTxtUHCxRsGItWNm7kMgI2vXlprQEsNHQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/users/admin/17",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"admin",
+						"17"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODQ4MTI5MTQsImlhdCI6MTY4NDcyNjUxNCwibmJmIjoxNjg0NzI2NTE0LCJzdWIiOjB9.iIUHLNIZuKe-VKILnpuj1W0VfMV9bmflr93ogR3ZiJYoXzeoWidfoPTxtUHCxRsGItWNm7kMgI2vXlprQEsNHQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"FullName\": \"Ram\",\r\n  \"Email\": \"12345@gmail.com\",\r\n  \"Password\": \"Ram@1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/admin/update/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"admin",
+						"update",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODQ4MTI5MTQsImlhdCI6MTY4NDcyNjUxNCwibmJmIjoxNjg0NzI2NTE0LCJzdWIiOjB9.iIUHLNIZuKe-VKILnpuj1W0VfMV9bmflr93ogR3ZiJYoXzeoWidfoPTxtUHCxRsGItWNm7kMgI2vXlprQEsNHQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/users/admin/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"admin",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
